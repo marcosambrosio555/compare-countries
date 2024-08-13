@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/all.css"> -->
+</head>
+
+<body>
+
+    <div class="point template">
+        <span class='color'></span>
+        <div class="center">
+            <span class='name'></span>
+            <span class="area"></span>
+        </div>
+        <span class='btn-remove'><i class='fa fa-times'></i></span>
+    </div>
+
+    <div class="graphic template">
+        <div class="top">
+            <span class='name'></span>
+            <span class="area"></span>
+        </div>
+        <span class='width'></span>
+    </div>
+
+    <main class="main">
+        <div class="container">
+
+            <div class="form">
+                <form action="">
+                    <input type="text" list="countries" placeholder="Search a country">
+                    <button type="submit" class="btn">Add</button>
+                    <span class="msg"></span>
+                </form>
+
+                <datalist id="countries" class="countries">
+
+                </datalist>
+            </div>
+
+            <div class="checkpoints">
+
+            </div>
+
+            <nav class="nav-links">
+                <a href="#dashboard" class="dashboard active">Dashboard</a>
+                <a href="#graphics" class="graphics">Graphics</a>
+                <a href="#totalArea" class="totalArea">Total Area</a>
+                <a href="#statistics" class="statistics">Statistics</a>
+            </nav>
+
+            <div class="content">
+
+                <div class="dashboard" id="dashboard">
+
+                </div>
+
+                <div class="graphics" id="graphics">
+
+
+                </div>
+
+                <div class="totalArea" id="totalArea">
+                    <h2>Total area : <span class="value"></span></h2>
+                    <div class="block">
+                    </div>
+                    <div class="percent">
+
+                    </div>
+                </div>
+
+                <div class="statistics" id="statistics">
+                    <h2 class="selected"></h2>
+                    <ul class="list">
+
+                    </ul>
+                    <p class="all"></p>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+    <script src="js/script.js" type="module"></script>
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/5b8f00096f.js" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
