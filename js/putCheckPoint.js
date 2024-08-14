@@ -3,6 +3,7 @@ import formatArea from "./formatArea.js";
 import { updateGraphics } from "./graphics.js";
 import { data } from "./script.js";
 import updateStatistics from "./statistics.js";
+import updateTotalArea from "./totalArea.js";
 import { deleteBlock, increaseIndex } from "./utilities.js";
 
 
@@ -25,6 +26,8 @@ function putCheckPoints({ name, color, id, area }) {
         const indexElement = data.countriesSelected.findIndex(item => item.id === id)
         data.countriesSelected.splice(indexElement, 1)
         updateGraphics()
+        updateTotalArea()
+        updateStatistics()
         event.stopPropagation()
     })
 
