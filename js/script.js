@@ -53,6 +53,8 @@ btnAdd.addEventListener("click", (e) => {
     e.preventDefault();
     if (inputValue.value) {
 
+        const value = inputValue.value.trim()
+
         if (data.countriesSelected.length >= 20) {
             inputValue.style.borderColor = "#a33"
             msg.innerText = "Too many countries"
@@ -60,7 +62,7 @@ btnAdd.addEventListener("click", (e) => {
         }
 
         const filtered = countries.filter(item => {
-            return item.name.toLocaleLowerCase() === inputValue.value.toLocaleLowerCase()
+            return item.name.toLocaleLowerCase() === value.toLocaleLowerCase()
         })
 
         if (filtered.length === 1) {

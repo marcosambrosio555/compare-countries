@@ -10,7 +10,7 @@ function updateTotalArea() {
         return total += Number(item.area);
     }, 0)
 
-    totalContent.querySelector("h2 .value").innerText = `${formatArea(totalArea)}km²`
+    totalContent.querySelector("h2").innerHTML = `Total area : <span class="area">${formatArea(totalArea)}km²</span>`
 
     const block = totalContent.querySelector(".block")
     block.innerHTML = ""

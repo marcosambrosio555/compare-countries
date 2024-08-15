@@ -47,8 +47,8 @@ function putBlock({ area, color, id }) {
 
 
     /* Mobile */
-    block.addEventListener("touchstart", () => {
-
+    block.addEventListener("touchstart", (e) => {
+        e.preventDefault()
         if (!data.selectedBlock) {
             data.half = Number(Math.sqrt(scaleArea) / 2);
             data.selectedBlock = id
@@ -57,7 +57,7 @@ function putBlock({ area, color, id }) {
             block.style.zIndex = data.zIndex;
             data.block = block
         }
-    });
+    }, { passive: false });
     block.addEventListener("touchend", () => {
         data.moving = false;
         data.selectedBlock = null

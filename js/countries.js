@@ -1,38 +1,3 @@
-// const countries = [
-
-//     // Africa
-
-//     { name: "Algeria", area: 2381741 },
-//     { name: "DR_congo", area: 2344858 },
-//     { name: "Sudan", area: 1861484 },
-//     { name: "Libya", area: 1759540 },
-//     { name: "Chad", area: 1284000 },
-//     { name: "Niger", area: 1267000 },
-//     { name: "Angola", area: 1246700 },
-//     { name: "Mali", area: 1240192 },
-//     { name: "South Africa", area: 1221037 },
-
-//     // Asia
-//     { name: "Russia", area: 17098300 },
-//     { name: "China", area: 9562900 },
-
-//     // America
-//     { name: "Canada", area: 9984700 },
-//     { name: "United States", area: 9831500 },
-//     { name: "Brazil", area: 8515767 },
-
-//     // Europe
-//     { name: "Germany", area: 357022 },
-//     { name: "Dimnmark", area: 42933 },
-//     { name: "Swirlnad", area: 41290 },
-//     { name: "Nethersland", area: 41543 },
-//     { name: "France", area: 551695 },
-//     { name: "Belgium", area: 30689 },
-//     { name: "United Kingstom", area: 243610 },
-
-
-// ]
-
 const countries = [
     { name: "Russia", area: 17098242 },
     { name: "Canada", area: 9984670 },
