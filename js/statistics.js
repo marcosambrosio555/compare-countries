@@ -1,4 +1,4 @@
-import formatArea from "./formatArea.js"
+import { format, putValueFormated } from "./format.js"
 import { data } from "./script.js"
 
 const statisticsContent = document.querySelector(".content .statistics")
@@ -15,48 +15,51 @@ function updateStatistics(element) {
     all.innerHTML = ""
 
     if (element) {
-        const { name, area, color } = element
-        selected.innerHTML = `<span class='color' style='background:${color}'></span> <span class='name'>${name}</span> <span class='area'>${formatArea(area)}km² :</span>`
+        const { name, params, color, value } = element
+        selected.innerHTML = `<span class='color' style='background:${color}'></span> <span class='name'>${name}</span> <span class='params'>${params} :</span>`
+        selected.id = element.id
         putEachCountry(element)
-        putAllCountries(area, total)
+        putAllCountries(value, total)
     } else {
         if (data.countriesSelected.length >= 1) {
             const element = data.countriesSelected.at(-1)
-            const { name, color, area } = element
-            selected.innerHTML = `<span class='color' style='background:${color}'></span> <span class='name'>${name}</span> <span class='area'>${formatArea(area)}km² :</span>`
+            const { name, color, params, value } = element
+            selected.innerHTML = `<span class='color' style='background:${color}'></span> <span class='name'>${name}</span> <span class='params'>${params} :</span>`
             putEachCountry(element)
-            putAllCountries(area, total)
+            putAllCountries(value, total)
         }
     }
 
 }
 
 function putEachCountry(element) {
+
     data.countriesSelected.map((item) => {
         if (item.id !== element.id) {
-            const numberTimes = element.area / item.area
+            const numberTimes = element.value / item.value
+
             list.innerHTML += `
-                <li>
+                <li id='${item.id}'>
                     <span class='color' style='background:${item.color}'></span>
                     <span class='name'>${item.name}</span> 
-                    <span class='area'>${formatArea(item.area)}km²</span> is 
-                    <span class='numberTimes'>${numberTimes.toFixed(2)}</span> 
+                    <span class='params'>${item.params}</span> is 
+                    <span class='numberTimes'>${format(numberTimes)}</span> 
                     times 
                 </li>
             `
-            total += item.area;
+            total += item.value;
         }
     })
+
 }
 
-function putAllCountries(area, total) {
-    const numberTimes = area / total
-
+function putAllCountries(value, total) {
+    const numberTimes = value / total
     all.innerHTML = `
         <span class='color' style='background: #111'></span>
         <span class='name'>All countries</span> 
-        <span class='area'>${formatArea(total)}km²</span> is 
-        <span class='numberTimes'>${numberTimes.toFixed(2)}</span> 
+        <span class='params'>${putValueFormated(total)}</span> is 
+        <span class='numberTimes'>${format(numberTimes)}</span> 
         times 
     `
 }

@@ -1,26 +1,42 @@
-import formatArea from "./formatArea.js"
+import { calculateScale } from "./calculateScale.js"
 import { data } from "./script.js"
 
-const graphics = document.querySelector(".content .graphics")
-const templateGraphic = document.querySelector(".graphic.template")
-
-// graphics.style.background = "red"
+const graphics = document.querySelector(".content .graphics .list")
+const h2 = document.querySelector(".content .graphics h2")
 
 function updateGraphics() {
+
+    let scaleDiv = calculateScale() * 500
+
     graphics.innerHTML = ""
+    h2.innerText = ""
+
+    // Order from smaller to bigger  country
     data.countriesSelected.sort((a, b) => {
-        return b.area - a.area;
+        return b.value - a.value;
     });
+
+    if (data.countriesSelected.length > 0) {
+        h2.innerText = "Graphics"
+    }
+
     data.countriesSelected.map(item => {
-        const { name, color, area } = item
-        const card = templateGraphic.cloneNode(true)
-        card.classList.remove("template")
-        card.querySelector(".name").innerText = name
-        card.querySelector(".area").innerText = `${formatArea(area)}km²`;
-        card.querySelector(".width").style.width = `${area / 200000}rem`;
-        card.querySelector(".width").style.background = color
-        graphics.appendChild(card)
+
+        const { id, name, color, value, params } = item
+
+        graphics.innerHTML += `
+            <div class="graphic" id=${id}>
+                <div class="top">
+                    <span class='name'>${name}</span>
+                    <span class="params">${params}</span>
+                </div>
+                <span class='width' style='background : ${color}; width : ${value / scaleDiv}rem;'></span>
+            </div>
+        `
+
     })
+
 }
+
 
 export { updateGraphics }

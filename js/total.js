@@ -1,13 +1,12 @@
-import formatArea from "./formatArea.js";
+import { putValueFormated } from "./format.js";
 import { data } from "./script.js";
 
-const totalContent = document.querySelector(".content .totalArea")
+const totalContent = document.querySelector(".content .total")
 const percentContent = document.querySelector(".percent")
 const block = totalContent.querySelector(".block")
 const h2 = totalContent.querySelector("h2")
 
-function updateTotalArea() {
-
+function updateTotal() {
 
     block.innerHTML = ""
     percentContent.innerHTML = ""
@@ -15,16 +14,17 @@ function updateTotalArea() {
 
     if (data.countriesSelected.length > 0) {
 
-        const totalArea = data.countriesSelected.reduce((total, item) => {
-            return total += Number(item.area);
+        const totalparams = data.countriesSelected.reduce((total, item) => {
+            return total += Number(item.value);
         }, 0)
 
-        h2.innerHTML = `Total area : <span class="area">${formatArea(totalArea)}km²</span>`
+        h2.innerHTML = `Total : <span class="params">${putValueFormated(totalparams)}</span>`
 
         data.countriesSelected.map(item => {
             const div = document.createElement("div")
             div.classList.add("part")
-            const widthPercent = (item.area * 100) / totalArea
+            div.id = item.id
+            const widthPercent = (item.value * 100) / totalparams
             const color = item.color
             div.style.width = `${widthPercent}%`
             div.style.backgroundColor = color
@@ -37,16 +37,16 @@ function updateTotalArea() {
 }
 
 function putPercent(item, widthPercent) {
-    const { name, color, area } = item
+    const { name, color, params, id } = item
     percentContent.innerHTML += `
-        <div class='item'>
+        <div class='item' id='${id}'>
             <span class='color' style='background:${color}'></span>
             <span class='name'>${name}</span>
-            <span class='area'>${formatArea(area)}km²</span>
+            <span class='params'>${params}</span>
             <span class='per'>${widthPercent.toFixed(2)}%</span>
         </div>
     `
 }
 
 
-export default updateTotalArea;
+export default updateTotal;
