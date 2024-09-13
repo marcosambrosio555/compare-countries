@@ -45,7 +45,7 @@ body {
 .anuncio {
     /* background-color: #fff; */
     /* border: 1px solid var(--gray-color-07); */
-    min-height: 9rem;
+    min-height: 2rem;
 }
 
 
@@ -246,6 +246,8 @@ h2 {
 .content {
     border: 1px solid var(--gray-color-07);
     margin-bottom: .4rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .content>div {
@@ -255,6 +257,8 @@ h2 {
     padding: 4rem 2.8rem;
     border: .4rem solid #fff;
     display: none;
+    position: relative;
+    overflow: scroll;
 }
 
 .content>div.show {
@@ -268,6 +272,7 @@ h2 {
 
 .content .dashboard {
     position: relative;
+    overflow: hidden;
 }
 
 .dashboard .box {
@@ -374,6 +379,7 @@ h2 {
     display: flex;
     align-items: center;
     gap: .8rem;
+    flex-wrap: wrap;
 }
 
 
