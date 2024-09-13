@@ -9,14 +9,14 @@
     --gray-color-01: #f9fafb;
     --gray-color-02: #f0f2f4;
     --gray-color-03: #eaedf0;
-    --gray-color-04: #dfe3e7;
+    --gray-color-07: #dfe3e7;
     --gray-color-05: #ced4da;
-    --gray-color-06: #adb5bd;
+    --gray-color-07: #adb5bd;
     --gray-color-07: #878f97;
     --gray-color-08: #484f56;
     --gray-color-09: #353b41;
     --gray-color-10: #22262a;
-    --error-color: #a43;
+    --error-color: #aa4334;
 }
 
 html {
@@ -25,7 +25,7 @@ html {
 }
 
 body {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     background-color: var(--gray-color-01);
 }
 
@@ -43,8 +43,8 @@ body {
 
 
 .anuncio {
-    background-color: #fff;
-    border: 1px solid var(--gray-color-05);
+    /* background-color: #fff; */
+    /* border: 1px solid var(--gray-color-07); */
     min-height: 9rem;
 }
 
@@ -54,31 +54,26 @@ body {
 /* Header */
 
 .header {
-    margin-top: .8rem;
+    margin-top: 1.6rem;
 }
 
 .header .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
-    align-items: center;
+    display: flex;
+    /* grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); */
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
-.title {
+h1,
+h2 {
     font-family: sans-serif;
 }
 
-h1 {
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: var(--gray-color-10);
+.header .anuncio {
+    width: 40rem;
 }
 
-h2 {
-    font-size: 2.4rem;
-    margin-top: .8rem;
-    color: var(--gray-color-10);
-}
 
 
 /* Form */
@@ -100,8 +95,8 @@ h2 {
     width: 100%;
     height: 3.6rem;
     outline: none;
-    padding-left: .8rem;
-    border: 1px solid var(--gray-color-05);
+    padding-left: 1.2rem;
+    border: 1px solid var(--gray-color-07);
 }
 
 
@@ -115,9 +110,14 @@ h2 {
     height: 3.6rem;
     padding: 0 .8rem;
     cursor: pointer;
-    background-color: #f1f1f1;
-    border: 1px solid var(--gray-color-05);
+    background-color: var(--gray-color-03);
+    border: 1px solid var(--gray-color-07);
     color: var(--gray-color-08);
+    transition: .4s;
+}
+
+.form form button:hover {
+    background-color: var(--gray-color-07);
 }
 
 .form form .msg {
@@ -131,21 +131,27 @@ h2 {
 
 /* Geral */
 
-.params {
-    color: var(--gray-color-08);
-    white-space: nowrap;
-}
-
 .name {
     white-space: nowrap;
+    font-weight: 900;
+    font-size: 1.8rem;
 }
+
+
+.params {
+    font-size: 1.4rem;
+    font-weight: 500;
+    white-space: nowrap;
+
+}
+
 
 .color {
     display: block;
     border-radius: 50%;
-    height: 1.6rem;
-    width: 1.6rem;
-    border: 1px solid var(--gray-color-05);
+    height: 1rem;
+    width: 1rem;
+    border: 1px solid var(--gray-color-07);
 }
 
 /* Checkpoints */
@@ -153,7 +159,7 @@ h2 {
 
 .checkpoints {
     height: 7rem;
-    border: 1px solid var(--gray-color-05);
+    border: 1px solid var(--gray-color-07);
     margin: 0 auto .4rem;
     padding: .4rem;
     display: flex;
@@ -167,7 +173,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #aaa;
+    border: 1px solid var(--gray-color-07);
     background-color: #fafafa;
     padding: .4rem;
     gap: .8rem;
@@ -198,12 +204,18 @@ h2 {
     color: var(--error-color);
 }
 
+.checkpoints .color {
+
+    height: 1.6rem;
+    width: 1.6rem;
+}
 
 
 /* Nav-links */
 
 .nav-links {
     display: flex;
+    /* overflow-x: scroll; */
 }
 
 .nav-links button {
@@ -214,13 +226,14 @@ h2 {
     transition: .4s;
     white-space: nowrap;
     background-color: transparent;
+    font-family: serif;
     border: none;
     color: var(--gray-color-08);
 }
 
 .nav-links button.active {
     background-color: #fff;
-    border: 1px solid var(--gray-color-05);
+    border: 1px solid var(--gray-color-07);
     z-index: 2;
     border-bottom-color: transparent;
     transition: .4s;
@@ -231,7 +244,7 @@ h2 {
 /* Content */
 
 .content {
-    border: 1px solid var(--gray-color-05);
+    border: 1px solid var(--gray-color-07);
     margin-bottom: .4rem;
 }
 
@@ -254,9 +267,7 @@ h2 {
 /* Dashboard */
 
 .content .dashboard {
-    margin: auto;
     position: relative;
-    overflow: hidden;
 }
 
 .dashboard .box {
@@ -265,12 +276,11 @@ h2 {
     left: 30px;
     cursor: pointer;
     outline: none;
-    color: transparent;
     outline: 1px solid #333;
 }
 
 .dashboard .box:hover {
-    outline: 1px solid var(--error-color);
+    outline: 1px solid var(--gray-color-07);
 }
 
 /* Graphics */
@@ -287,9 +297,6 @@ h2 {
     margin-bottom: .8rem;
 }
 
-.content .graphics .name {
-    font-size: 1.8rem;
-}
 
 .content .graphics .width {
     display: block;
@@ -313,6 +320,11 @@ h2 {
     gap: .8rem;
 }
 
+.content .statistics .selected .color {
+    height: 1.6rem;
+    width: 1.6rem;
+}
+
 .content .statistics .list {
     display: flex;
     flex-direction: column;
@@ -326,17 +338,6 @@ h2 {
     align-items: center;
     gap: .8rem;
     flex-wrap: wrap;
-}
-
-.content .statistics .list .color,
-.content .statistics .all .color {
-    height: 1rem;
-    width: 1rem;
-}
-
-.content .statistics .list .name {
-    font-weight: bold;
-    white-space: nowrap;
 }
 
 .content .statistics .list .params {
@@ -353,31 +354,54 @@ h2 {
 }
 
 .content .statistics .all .name {
-    font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
+
+/* Compare */
+
+.content .comparation {
+    overflow-x: scroll;
+}
+
+.content .comparation .block {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.content .comparation .block .col {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
 
 
 /* Total */
 
 .content .total {
-    overflow-y: scroll;
     overflow-x: scroll;
 }
 
+.content .total h2 .params {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
 .content .total .block {
-    width: 90%;
+    width: 100%;
     height: 2.4rem;
-    margin-top: 2rem;
+    margin-top: .8rem;
     display: flex;
 }
 
 
 .content .total .percent {
-    margin-top: 2rem;
+    margin-top: 1.6rem;
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: .8rem;
 }
 
 .content .total .percent .item {
@@ -387,18 +411,7 @@ h2 {
     flex-wrap: wrap;
 }
 
-.content .total .percent .item .color {
-    height: 1.2rem;
-    width: 1.2rem;
-}
-
-
-.content .total .percent .item .name {
-    font-size: 2rem;
-}
-
 .content .total .percent .item .per {
-    font-size: 1.8rem;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -408,45 +421,55 @@ h2 {
 
 .lastest-updated {
     margin-top: .4rem;
-    color: #626462;
+    font-size: 1.2rem;
+    font-weight: 100;
 }
 
-.text {
+.description {
     display: flex;
     flex-direction: column;
     gap: .8rem;
-    margin: 1.6rem 0 2.4rem;
+    /* margin: 1.6rem 0 2.4rem; */
+    line-height: 2.4rem;
 }
 
-.text ul {
-    padding-left: 2rem;
+.description h3 {
+    margin-top: 2.4rem;
 }
+
+.description ul {
+    padding-left: 1.8rem;
+}
+
+
+
 
 /* Links */
 
 .links {
-    margin: 1.6rem 0;
-
+    margin: 2.4rem 0;
+    /* padding: 1rem; */
 }
 
 .links .row {
     display: flex;
     flex-wrap: wrap;
     gap: .8rem;
-    margin-top: .8rem;
+    margin-top: 1.2rem;
 }
 
 .links a {
-    border: 1px solid #222;
+    border: 1px solid var(--gray-color-10);
     color: #f5f5f5;
-    background-color: #565656;
+    background-color: var(--gray-color-09);
     padding: .4rem .8rem;
     transition: .4s;
 }
 
 .links a:hover {
-    border-color: #565656;
-    background-color: #222;
+    border-color: var(--gray-color-08);
+    background-color: var(--gray-color-10);
+    text-decoration: underline;
 }
 
 
@@ -463,6 +486,14 @@ h2 {
     border-top: 1px solid var(--gray-color-07);
 }
 
+
+
+@media screen and (max-width:800px) {
+    .header .anuncio {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width:540px) {
     html {
         font-size: 55%;
@@ -470,6 +501,10 @@ h2 {
 
     .content>div {
         height: 44rem;
+    }
+
+    .nav-links {
+        overflow-x: scroll
     }
 
     .nav-links button {

@@ -133,9 +133,10 @@ const countries = [
     { name: "Denmark", area: 43094, population: 5933000 },
     { name: "Netherlands", area: 41543, population: 17468482 },
     { name: "Switzerland", area: 41284, population: 8900385 },
-    { name: "Bissau Guinea", area: 36125, population: null }, // Atualizacao aqui
     { name: "Bhutan", area: 38394, population: 771608 },
     { name: "Taiwan", area: 36193, population: 23503349 },
+    { name: "Bissau Guinea", area: 36125, population: 1604528 },
+    { name: "Moldova", area: 33846, population: 2640438 },
     { name: "Lesotho", area: 30355, population: 2130000 },
     { name: "Belgium", area: 30528, population: 11589623 },
     { name: "Armenia", area: 29743, population: 2786300 },
@@ -151,6 +152,7 @@ const countries = [
     { name: "El Salvador", area: 21041, population: 6550813 },
     { name: "Israel", area: 20770, population: 9749000 },
     { name: "Slovenia", area: 20273, population: 2107000 },
+    { name: "New Caledonia", area: 18575, population: 290000 },
     { name: "Fiji", area: 18274, population: 946374 },
     { name: "Kuwait", area: 17818, population: 4389657 },
     { name: "Eswatini", area: 17364, population: 1186040 },
@@ -158,12 +160,14 @@ const countries = [
     { name: "Bahamas", area: 13940, population: 400516 },
     { name: "Montenegro", area: 13812, population: 618200 },
     { name: "Vanuatu", area: 12189, population: 307815 },
+    { name: "Falkland Islands", area: 12173, population: 3198 },
     { name: "Qatar", area: 11586, population: 2930527 },
     { name: "Gambia", area: 11295, population: 2783645 },
     { name: "Jamaica", area: 10991, population: 2726667 },
     { name: "Kosovo", area: 10887, population: 1831000 },
     { name: "Lebanon", area: 10452, population: 5287800 },
     { name: "Cyprus", area: 9251, population: 1207361 },
+    { name: "State of Palestine", area: 6020, population: 5186790 },
     { name: "Brunei", area: 5765, population: 459500 },
     { name: "Trinidad and Tobago", area: 5128, population: 1394969 },
     { name: "Cape Verde", area: 4033, population: 593149 },
@@ -197,13 +201,5 @@ const countries = [
     { name: "Monaco", area: 2.02, population: 39244 },
     { name: "Vatican City", area: 0.44, population: 800 }
 ];
-
-/*
-Moldova
-New Caledonia
-Falkland Islands
-State of Palestine
-Guine bissau
-*/
 
 export default countries;

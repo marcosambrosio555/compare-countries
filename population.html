@@ -4,13 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The place you can compare all of countries in the world." />
+    <meta name="author" content="Marcos Ambrósio" />
+    <meta name="keywords" content="country , compare , coutries , area , population" />
+    <meta name="robots" content="noindex , nofolllow" />
+    <link rel="canonical" href="https://www.comparecountries.onrender.com/">
+    <meta name="theme-color" content="#f9fafb" />
+    <meta name="copyright" content="MACode ID, https://macodeid.com/" />
+
+    <!-- Google+ / Schema.org -->
+    <meta itemprop="name" content="Compare Countries">
+    <meta itemprop="description" content="Compare countries by area, population,
+ GDP and more. Get detailed insights and make informed comparisons.">
+    <meta itemprop="image" content="https://exemplo.com/imagem.png">
+    <link rel="stylesheet" href="https://plus.google.com/+SuaPagina" rel="publisher">
+
+
+    <!-- Open Graph ( Para as redes sociais ) -->
+    <!-- Open Graph Facebook  -->
+    <meta property="og:title" content="Compare Countries">
+    <meta property="og:description" content="Compare countries by area, population,
+ GDP and more. Get detailed insights and make informed comparisons.">
+    <meta property="og:url" content="https://www.comparecountries.com">
+    <meta property="og:site_name" content="Nome do site">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.comparecountries.com/og-image.png">
+    <!-- Twitter -->
+    <meta name="twitter:title" content="Compare Countries">
+    <meta name="twitter:description" content="Compare countries by area, population,
+ GDP and more. Get detailed insights and make informed comparisons.">
+    <meta name="twitter:url" content="https://www.comparecountries.onrender.com">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site_name" content="comparecountries">
+    <meta name="twitter:type" content="website">
+    <meta name="twitter:image" content="https://www.comparecountries.com/og-image.png">
+    <meta name="twitter:creator" content="@marcosambrosio">
+
+
     <title>Compare Countries</title>
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/all.css"> -->
 </head>
 
 <body>
+
+    <input type="hidden" id="compare" value="area">
 
     <div class="point template">
         <span class='color'></span>
@@ -21,7 +60,6 @@
         <span class='btn-remove'><i class='fa fa-times'></i></span>
     </div>
 
-    <input type="hidden" id="compare" value="population">
 
     <header class="header">
         <div class="container">
@@ -29,7 +67,17 @@
                 <h1>Compare Countries</h1>
                 <h2>Compare Population</h2>
             </div>
-            <div class="anuncio"></div>
+            <div class="anuncio">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8673964630413887"
+                    crossorigin="anonymous"></script>
+                <!-- Meus primeiros blocos de anuncios -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8673964630413887"
+                    data-ad-slot="2605262513" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
         </div>
     </header>
 
@@ -53,10 +101,11 @@
                 <button class="dashboard active">Dashboard</button>
                 <button class="graphics">Graphics</button>
                 <button class="statistics">Statistics</button>
+                <button class="comparation">Comparation</button>
                 <button class="total">Total</button>
             </nav>
 
-            <div class="content">
+            <section class="content">
 
                 <div class="dashboard show" id="dashboard">
 
@@ -67,62 +116,83 @@
                     <div class="list"></div>
                 </div>
 
-                <div class="total" id="total">
-                    <h2></h2>
-                    <div class="block"></div>
-                    <div class="percent"></div>
-                </div>
-
                 <div class="statistics" id="statistics">
                     <h2 class="selected"></h2>
                     <ul class="list"></ul>
                     <p class="all"></p>
                 </div>
 
-            </div>
+                <div class="total" id="total">
+                    <h2></h2>
+                    <div class="block"></div>
+                    <div class="percent"></div>
+                </div>
+
+
+            </section>
 
             <div class="anuncio w100">
-
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8673964630413887"
+                    crossorigin="anonymous"></script>
+                <!-- Meus primeiros blocos de anuncios -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8673964630413887"
+                    data-ad-slot="2605262513" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
 
             <p class="lastest-updated">Latest updated <span class="date">20/08/2024</span></p>
 
-            <div class="text">
+            <section class="description">
+                <h3> Welcome to CompareCountries</h3>
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti porro rerum magni, et sed sit,
-                    eaque
-                    omnis odio ad esse illum excepturi voluptas impedit optio? Provident iusto minima sequi similique.
+                    The ultimate tool for comparing nations across various metrics, including area,
+                    population, GDP, and much more. Whether you're a student, researcher, or simply curious about global
+                    statistics, CompareCountries provides an easy-to-use platform for exploring and comparing the vital
+                    statistics of countries around the world.
                 </p>
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti porro rerum magni, et sed sit,
-                    eaque
-                    omnis odio ad esse illum excepturi voluptas impedit optio? Provident iusto minima sequi similique.
+                    This tool allows users to quickly and efficiently compare different countries based on
+                    multiple criteria. By simply selecting the countries and the metrics you're interested in, you can
+                    see side-by-side comparisons that offer insights into how these nations stack up against each other.
                 </p>
-                <h4>Notes</h4>
+                <h3>How to Use</h3>
                 <ul>
                     <li>Use the form to Search a countries</li>
                     <li>Click twice to disable a block</li>
                     <li>click in <i class="fa fa-times"></i> to delete a country</li>
-                    <li>Click circle the change the color</li>
+                    <li>Click in circle the change the color</li>
 
                 </ul>
-            </div>
+            </section>
 
-            <div class="links">
-                <h3>Others</h3>
+            <section class="links">
+                <h3>Others Links</h3>
                 <div class="row">
-                    <a href="./index.html">compare population</a>
+                    <a href="./index.html">compare area</a>
                 </div>
-            </div>
+            </section>
 
-            <div class="anuncio w100"></div>
+            <div class="anuncio w100">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8673964630413887"
+                    crossorigin="anonymous"></script>
+                <!-- Meus primeiros blocos de anuncios -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8673964630413887"
+                    data-ad-slot="2605262513" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
 
         </div>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p>Copyright &copy;2024 compare countries Ldt | concept by marcos ambrosio</p>
+            <p>Copyright &copy;2024 comparecountries Ldt | concept by marcos ambrosio</p>
         </div>
     </footer>
 

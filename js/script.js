@@ -6,9 +6,10 @@ import { returnColor } from "./utilities.js"
 
 import { updateGraphics } from "./graphics.js";
 import putBlock from "./putBlock.js";
-import putCheckPoints from "./putCheckPoint.js";
+import putCheckPoints from "./checkPoint.js";
 import updateStatistics from "./statistics.js";
 import updateTotal from "./total.js";
+import { updateComparation } from "./comparation.js";
 
 const compare = document.getElementById("compare").value
 
@@ -120,6 +121,10 @@ function putElement(element) {
     updateStatistics(object);
     updateTotal();
 
+    // Especial
+    if (data.compare === "area") {
+        updateComparation()
+    }
 }
 
 function typeOfValue(value, compare) {

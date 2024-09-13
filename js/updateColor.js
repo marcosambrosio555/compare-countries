@@ -10,6 +10,12 @@ function updateColor(atualColor, element) {
     document.querySelector(`.total .block #${id}`).style.background = newColor
     document.querySelector(`.total .percent #${id} .color`).style.background = newColor
     document.querySelector(`.statistics #${id} .color`).style.background = newColor
+
+    // Especial
+    if (data.compare === "area") {
+        document.querySelector(`.comparation #${id} .color`).style.background = newColor
+    }
+
     element.color = newColor;
     data.colors.push(atualColor)
 }

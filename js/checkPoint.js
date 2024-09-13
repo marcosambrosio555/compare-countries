@@ -1,3 +1,4 @@
+import { updateComparation } from "./comparation.js";
 import { updateGraphics } from "./graphics.js";
 import { data } from "./script.js";
 import updateStatistics from "./statistics.js";
@@ -31,6 +32,10 @@ function putCheckPoints(element) {
         updateGraphics()
         updateTotal()
         updateStatistics()
+        // Especial
+        if (data.compare === "area") {
+            updateComparation()
+        }
         event.stopPropagation()
     })
 
