@@ -5,20 +5,6 @@
     text-decoration: none;
 }
 
-:root {
-    --gray-color-01: #f9fafb;
-    --gray-color-02: #f0f2f4;
-    --gray-color-03: #eaedf0;
-    --gray-color-07: #dfe3e7;
-    --gray-color-05: #ced4da;
-    --gray-color-07: #adb5bd;
-    --gray-color-07: #878f97;
-    --gray-color-08: #484f56;
-    --gray-color-09: #353b41;
-    --gray-color-10: #22262a;
-    --error-color: #aa4334;
-}
-
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -26,7 +12,8 @@ html {
 
 body {
     font-size: 1.8rem;
-    background-color: var(--gray-color-01);
+    background-color: #f5f5f5;
+    color: #223344;
 }
 
 .container {
@@ -56,7 +43,6 @@ body {
 
 .header .container {
     display: flex;
-    /* grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); */
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 2rem;
@@ -90,7 +76,7 @@ h2 {
     height: 3.6rem;
     outline: none;
     padding-left: 1.2rem;
-    border: 1px solid var(--gray-color-07);
+    border: 1px solid #223344;
 }
 
 
@@ -104,14 +90,13 @@ h2 {
     height: 3.6rem;
     padding: 0 .8rem;
     cursor: pointer;
-    background-color: var(--gray-color-03);
-    border: 1px solid var(--gray-color-07);
-    color: var(--gray-color-08);
+    border: 1px solid #333;
+    color: #223344;
     transition: .4s;
 }
 
 .form form button:hover {
-    background-color: var(--gray-color-07);
+    background-color: #333;
 }
 
 .form form .msg {
@@ -145,7 +130,7 @@ h2 {
     border-radius: 50%;
     height: 1rem;
     width: 1rem;
-    border: 1px solid var(--gray-color-07);
+    border: 1px solid #333;
 }
 
 /* Checkpoints */
@@ -153,7 +138,7 @@ h2 {
 
 .checkpoints {
     height: 7rem;
-    border: 1px solid var(--gray-color-07);
+    border: 1px solid #333;
     margin: 0 auto .4rem;
     padding: .4rem;
     display: flex;
@@ -167,7 +152,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--gray-color-07);
+    border: 1px solid #333;
     background-color: #fafafa;
     padding: .4rem;
     gap: .8rem;
@@ -222,12 +207,12 @@ h2 {
     background-color: transparent;
     font-family: serif;
     border: none;
-    color: var(--gray-color-08);
+    color: #223344;
 }
 
 .nav-links button.active {
     background-color: #fff;
-    border: 1px solid var(--gray-color-07);
+    border: 1px solid #333;
     z-index: 2;
     border-bottom-color: transparent;
     transition: .4s;
@@ -238,7 +223,7 @@ h2 {
 /* Content */
 
 .content {
-    border: 1px solid var(--gray-color-07);
+    border: 1px solid #333;
     margin-bottom: .4rem;
     position: relative;
     overflow: hidden;
@@ -279,7 +264,7 @@ h2 {
 }
 
 .dashboard .box:hover {
-    outline: 1px solid var(--gray-color-07);
+    outline: 1px solid #333;
 }
 
 /* Graphics */
@@ -448,7 +433,6 @@ h2 {
 
 .links {
     margin: 2.4rem 0;
-    /* padding: 1rem; */
 }
 
 .links .row {
@@ -459,16 +443,13 @@ h2 {
 }
 
 .links a {
-    border: 1px solid var(--gray-color-10);
     color: #f5f5f5;
-    background-color: var(--gray-color-09);
+    background-color: #223344;
     padding: .4rem .8rem;
     transition: .4s;
 }
 
 .links a:hover {
-    border-color: var(--gray-color-08);
-    background-color: var(--gray-color-10);
     text-decoration: underline;
 }
 
@@ -483,7 +464,7 @@ h2 {
 
 .footer .container {
     padding: 1.6rem 0;
-    border-top: 1px solid var(--gray-color-07);
+    border-top: 1px solid #333;
 }
 
 @media screen and (max-width:540px) {
