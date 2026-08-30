@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Rankings — Biggest, Smallest, Richest & Most Populous Countries</title>
+    <meta name="description" content="Top 10 world rankings for area, population, density, GDP, GDP per capita and life expectancy — updated country comparison tables.">
+    <meta name="author" content="Marcos Ambrósio">
+    <meta name="keywords" content="compare countries, country comparison, area, population, GDP, GDP per capita, population density, life expectancy, world statistics">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.comparecountries.vercel.app/rankings.html">
+    <meta name="theme-color" content="#2f6fed">
+
+    <meta property="og:title" content="World Rankings — Biggest, Smallest, Richest & Most Populous Countries">
+    <meta property="og:description" content="Top 10 world rankings for area, population, density, GDP, GDP per capita and life expectancy — updated country comparison tables.">
+    <meta property="og:url" content="https://www.comparecountries.vercel.app/rankings.html">
+    <meta property="og:site_name" content="CompareCountries">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.comparecountries.vercel.app/images/favicon.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="World Rankings — Biggest, Smallest, Richest & Most Populous Countries">
+    <meta name="twitter:description" content="Top 10 world rankings for area, population, density, GDP, GDP per capita and life expectancy — updated country comparison tables.">
+    <meta name="twitter:image" content="https://www.comparecountries.vercel.app/images/favicon.png">
+
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./images/favicon.png">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "World Rankings — Biggest, Smallest, Richest & Most Populous Countries",
+        "url": "https://www.comparecountries.vercel.app/rankings.html",
+        "description": "Top 10 world rankings for area, population, density, GDP, GDP per capita and life expectancy — updated country comparison tables."
+    }
+    </script>
+
+</head>
+<body data-param="area">
+
+        <header class="topbar">
+        <div class="container">
+            <a href="index.html" class="brand"><span class="logo-globe">🌍</span> CompareCountries</a>
+            <nav class="site-nav" id="siteNav">
+                <ul>
+                    <li class="has-dropdown">
+                        <button type="button">Compare ▾</button>
+                        <div class="dropdown">
+                        <a href="index.html"><span class="d-icon">🗺️</span><span>Area<br><small>km²</small></span></a>
+                        <a href="population.html"><span class="d-icon">👥</span><span>Population<br><small>people</small></span></a>
+                        <a href="density.html"><span class="d-icon">🧭</span><span>Population Density<br><small>people/km²</small></span></a>
+                        <a href="gdp.html"><span class="d-icon">💰</span><span>GDP<br><small>USD</small></span></a>
+                        <a href="gdp-per-capita.html"><span class="d-icon">🏦</span><span>GDP per Capita<br><small>USD</small></span></a>
+                        <a href="life-expectancy.html"><span class="d-icon">❤️</span><span>Life Expectancy<br><small>years</small></span></a>
+                        </div>
+                    </li>
+                    <li><a href="rankings.html" class="current">Rankings</a></li>
+                    <li><a href="facts.html">Fun Facts</a></li>
+                    <li><a href="about.html">About &amp; FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="toolbar-row">
+                <button class="icon-btn btn-theme" type="button" title="Toggle dark mode" aria-label="Toggle dark mode">🌓</button>
+                <button class="menu-toggle icon-btn" type="button" aria-label="Open menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="main">
+        <div class="container">
+            <header class="header">
+                <span class="eyebrow">🏆 World rankings</span>
+                <h1>World Rankings</h1>
+                <h2>The current top 10 countries for every metric this tool tracks — area, population, density, GDP, GDP per capita and life expectancy.</h2>
+            </header>
+
+            <div class="ad-slot" data-ad-position="top">Reserved advertising space (top)</div>
+
+            <div id="rankingsRoot"></div>
+
+            <div class="ad-slot" data-ad-position="mid-page">Reserved advertising space (mid-page)</div>
+
+            <section class="section-block">
+                <h3>Why rankings change over time</h3>
+                <p>Country statistics are never perfectly static. Population estimates are revised as new census and UN data are released, GDP figures shift with exchange rates and growth, and even land area can change slightly as territorial disputes are resolved or coastlines are resurveyed. The figures here are a snapshot for comparison and educational purposes, not an official statistical release.</p>
+                <p>Want to dig into a specific pair of countries instead of the world top 10? Head to any of the comparison pages linked in the menu above and build a custom side-by-side comparison — your selection is saved to the page URL so you can bookmark or share it.</p>
+            </section>
+
+            <div class="ad-slot" data-ad-position="footer">Reserved advertising space (footer)</div>
+
+        </div>
+    </main>
+
+        <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>Compare by</h5>
+                    <ul>
+                    <li><a href="index.html">🗺️ Area</a></li>
+                    <li><a href="population.html">👥 Population</a></li>
+                    <li><a href="density.html">🧭 Population Density</a></li>
+                    <li><a href="gdp.html">💰 GDP</a></li>
+                    <li><a href="gdp-per-capita.html">🏦 GDP per Capita</a></li>
+                    <li><a href="life-expectancy.html">❤️ Life Expectancy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Explore</h5>
+                    <ul>
+                        <li><a href="rankings.html">🏆 World Rankings</a></li>
+                        <li><a href="facts.html">✨ Fun Geography Facts</a></li>
+                        <li><a href="about.html">ℹ️ About &amp; FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>About this project</h5>
+                    <ul>
+                        <li><a href="about.html#methodology">Data &amp; methodology</a></li>
+                        <li><a href="about.html#faq">Frequently asked questions</a></li>
+                        <li><a href="sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CompareCountries &middot; Concept &amp; build by Marcos Ambrósio. Data is aggregated from public sources for educational comparison, not official statistics.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./js/site.js" type="module"></script>
+    <script src="./js/rankings.js" type="module"></script>
+</body>
+
+</html>

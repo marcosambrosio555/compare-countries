@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Countries by Area — Land Size Comparison Tool</title>
+    <meta name="description" content="Compare the area (km²) of any two or more countries side by side. Drag-and-drop size blocks, ranked charts, football-pitch comparisons and world rankings — free and instant.">
+    <meta name="author" content="Marcos Ambrósio">
+    <meta name="keywords" content="compare countries, country comparison, area, population, GDP, GDP per capita, population density, life expectancy, world statistics">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.comparecountries.vercel.app/">
+    <meta name="theme-color" content="#2f6fed">
+
+    <meta property="og:title" content="Compare Countries by Area — Land Size Comparison Tool">
+    <meta property="og:description" content="Compare the area (km²) of any two or more countries side by side. Drag-and-drop size blocks, ranked charts, football-pitch comparisons and world rankings — free and instant.">
+    <meta property="og:url" content="https://www.comparecountries.vercel.app/">
+    <meta property="og:site_name" content="CompareCountries">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.comparecountries.vercel.app/images/favicon.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Compare Countries by Area — Land Size Comparison Tool">
+    <meta name="twitter:description" content="Compare the area (km²) of any two or more countries side by side. Drag-and-drop size blocks, ranked charts, football-pitch comparisons and world rankings — free and instant.">
+    <meta name="twitter:image" content="https://www.comparecountries.vercel.app/images/favicon.png">
+
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./images/favicon.png">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "CompareCountries — Area Comparison",
+        "url": "https://www.comparecountries.vercel.app/",
+        "applicationCategory": "EducationApplication",
+        "operatingSystem": "Any",
+        "description": "Compare the area (km²) of any two or more countries side by side. Drag-and-drop size blocks, ranked charts, football-pitch comparisons and world rankings — free and instant.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+</head>
+<body data-param="area">
+
+        <header class="topbar">
+        <div class="container">
+            <a href="index.html" class="brand"><span class="logo-globe">🌍</span> CompareCountries</a>
+            <nav class="site-nav" id="siteNav">
+                <ul>
+                    <li class="has-dropdown">
+                        <button type="button">Compare ▾</button>
+                        <div class="dropdown">
+                        <a href="index.html"><span class="d-icon">🗺️</span><span>Area<br><small>km²</small></span></a>
+                        <a href="population.html"><span class="d-icon">👥</span><span>Population<br><small>people</small></span></a>
+                        <a href="density.html"><span class="d-icon">🧭</span><span>Population Density<br><small>people/km²</small></span></a>
+                        <a href="gdp.html"><span class="d-icon">💰</span><span>GDP<br><small>USD</small></span></a>
+                        <a href="gdp-per-capita.html"><span class="d-icon">🏦</span><span>GDP per Capita<br><small>USD</small></span></a>
+                        <a href="life-expectancy.html"><span class="d-icon">❤️</span><span>Life Expectancy<br><small>years</small></span></a>
+                        </div>
+                    </li>
+                    <li><a href="rankings.html">Rankings</a></li>
+                    <li><a href="facts.html">Fun Facts</a></li>
+                    <li><a href="about.html">About &amp; FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="toolbar-row">
+                <button class="icon-btn btn-theme" type="button" title="Toggle dark mode" aria-label="Toggle dark mode">🌓</button>
+                <button class="menu-toggle icon-btn" type="button" aria-label="Open menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="main">
+        <div class="container">
+
+            <header class="header">
+                <span class="eyebrow">🗺️ Area comparison</span>
+                <h1>Compare Countries by Area</h1>
+                <h2>Compare land area (km²) between any countries in the world, side by side.</h2>
+            </header>
+
+            <section class="form">
+                <form>
+                    <input type="text" name="form-control" list="countries" placeholder="Search a country, e.g. Angola" autocomplete="off">
+                    <button type="submit" class="btn">Add</button>
+                    <span class="msg"></span>
+                </form>
+                <datalist id="countries" class="countries"></datalist>
+                <div class="toolbar-row">
+                    <button type="button" class="btn-secondary btn-random">🎲 Add random country</button>
+                    <button type="button" class="btn-secondary btn-share">🔗 Share comparison</button>
+                    <button type="button" class="btn-secondary btn-clear">🗑️ Clear all</button>
+                </div>
+            </section>
+
+            <div class="checkpoints"></div>
+
+            <nav class="nav-links">
+                <button class="active" data-tab="dashboardPanel">Dashboard</button>
+                <button data-tab="graphics">Graphics</button>
+                <button data-tab="statistics">Statistics</button>
+                <button data-tab="context">Fun Context</button>
+                <button data-tab="total">Total</button>
+                <button data-tab="ranking">World Ranking</button>
+            </nav>
+
+            <section class="content">
+
+                <div class="show" id="dashboardPanel" data-tab-panel>
+                    <div class="view-switch">
+                        <button class="active" data-view="cubes" type="button">🧊 Blocks</button>
+                        <button data-view="bubbles" type="button">🫧 Bubbles</button>
+                        <button data-view="bars" type="button">📊 Columns</button>
+                        <button data-view="cards" type="button">🗂️ Cards</button>
+                    </div>
+                    <div class="dashboard" id="dashboard"></div>
+                </div>
+
+                <div class="graphics" id="graphics">
+                    <h2></h2>
+                    <div class="list"></div>
+                </div>
+
+                <div class="statistics" id="statistics">
+                    <h2 class="visually-hidden">Head-to-head statistics</h2>
+                    <p class="tab-blurb">Click any chip above to see how every other selected country compares to it, one by one.</p>
+                    <p class="selected"></p>
+                    <ul class="list"></ul>
+                    <p class="all"></p>
+                </div>
+
+                <div class="context" id="context">
+                    <h2></h2>
+                    <p class="ref-line"></p>
+                    <div class="block"></div>
+                </div>
+
+                <div class="total" id="total">
+                    <h2></h2>
+                    <div class="block"></div>
+                    <div class="percent"></div>
+                </div>
+
+                <div class="ranking" id="ranking">
+                    <h2></h2>
+                    <div class="ranking-toggle">
+                        <button class="active" data-dir="top" type="button">🔝 Top 10</button>
+                        <button data-dir="bottom" type="button">🔻 Bottom 10</button>
+                    </div>
+                    <div class="list"></div>
+                </div>
+
+            </section>
+
+            <div class="ad-slot" data-ad-position="mid-page">Reserved advertising space (mid-page)</div>
+
+            <p class="lastest-updated">Data last reviewed <span class="date">July 2026</span></p>
+
+            <section class="section-block description">
+                <h3>About comparing countries by area</h3>
+                <p>Area tells you how much land — and inland water — a country actually occupies, measured in square kilometres. It's the oldest and most intuitive way to compare countries: Russia alone is bigger than the whole of Pluto's surface, while Vatican City could fit inside a large shopping mall car park.</p>
+                <p>Use the search box above to add countries to your comparison. Every tab below reads the same list, so you can flip between a visual dashboard, ranked bar charts, head-to-head statistics, fun real-world comparisons, combined totals and the live world ranking without losing your selection.</p>
+                <h3>How to use this tool</h3>
+                <ul>
+                    <li>Search and add up to 24 countries using the form above.</li>
+                    <li>Switch between <strong>Blocks, Bubbles, Columns and Cards</strong> in the Dashboard tab — drag blocks around freely.</li>
+                    <li>Click a chip in the list to focus it in the Statistics tab.</li>
+                    <li>Click the small colour dot to reassign a country's colour.</li>
+                    <li>Use <strong>Share comparison</strong> to copy a link that reopens your exact selection.</li>
+                </ul>
+                <h3>Quick facts</h3>
+                <div class="fact-grid">
+                <div class="fact-card">
+                    <div class="f-icon">🇷🇺</div>
+                    <h4>Biggest on Earth</h4>
+                    <p>Russia spans 17,098,242 km² — more than 11% of the planet's entire land area.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="f-icon">🇻🇦</div>
+                    <h4>Smallest state</h4>
+                    <p>Vatican City covers just 0.44 km², making Russia about 39 million times larger.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="f-icon">🌍</div>
+                    <h4>Africa's giant</h4>
+                    <p>Algeria is Africa's largest country by area, at over 2.38 million km².</p>
+                </div>
+                </div>
+            </section>
+
+            <section class="section-block links">
+                <h3>Compare countries by other metrics</h3>
+                <ul>
+                    <li><a href="population.html">👥 Compare by Population</a></li>
+                    <li><a href="density.html">🧭 Compare by Population Density</a></li>
+                    <li><a href="gdp.html">💰 Compare by GDP</a></li>
+                    <li><a href="gdp-per-capita.html">🏦 Compare by GDP per Capita</a></li>
+                    <li><a href="life-expectancy.html">❤️ Compare by Life Expectancy</a></li>
+                    <li><a href="rankings.html">🏆 See full world rankings</a></li>
+                </ul>
+            </section>
+
+            <div class="ad-slot" data-ad-position="footer">Reserved advertising space (footer)</div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>Compare by</h5>
+                    <ul>
+                    <li><a href="index.html">🗺️ Area</a></li>
+                    <li><a href="population.html">👥 Population</a></li>
+                    <li><a href="density.html">🧭 Population Density</a></li>
+                    <li><a href="gdp.html">💰 GDP</a></li>
+                    <li><a href="gdp-per-capita.html">🏦 GDP per Capita</a></li>
+                    <li><a href="life-expectancy.html">❤️ Life Expectancy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Explore</h5>
+                    <ul>
+                        <li><a href="rankings.html">🏆 World Rankings</a></li>
+                        <li><a href="facts.html">✨ Fun Geography Facts</a></li>
+                        <li><a href="about.html">ℹ️ About &amp; FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>About this project</h5>
+                    <ul>
+                        <li><a href="about.html#methodology">Data &amp; methodology</a></li>
+                        <li><a href="about.html#faq">Frequently asked questions</a></li>
+                        <li><a href="sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CompareCountries &middot; Concept &amp; build by Marcos Ambrósio. Data is aggregated from public sources for educational comparison, not official statistics.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./js/main.js" type="module"></script>
+</body>
+
+</html>

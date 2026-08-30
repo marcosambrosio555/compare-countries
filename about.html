@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CompareCountries — Data, Methodology & FAQ</title>
+    <meta name="description" content="Learn how CompareCountries works, where its data comes from, and get answers to frequently asked questions about comparing countries by area, population, GDP and more.">
+    <meta name="author" content="Marcos Ambrósio">
+    <meta name="keywords" content="compare countries, country comparison, area, population, GDP, GDP per capita, population density, life expectancy, world statistics">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.comparecountries.vercel.app/about.html">
+    <meta name="theme-color" content="#2f6fed">
+
+    <meta property="og:title" content="About CompareCountries — Data, Methodology & FAQ">
+    <meta property="og:description" content="Learn how CompareCountries works, where its data comes from, and get answers to frequently asked questions about comparing countries by area, population, GDP and more.">
+    <meta property="og:url" content="https://www.comparecountries.vercel.app/about.html">
+    <meta property="og:site_name" content="CompareCountries">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.comparecountries.vercel.app/images/favicon.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="About CompareCountries — Data, Methodology & FAQ">
+    <meta name="twitter:description" content="Learn how CompareCountries works, where its data comes from, and get answers to frequently asked questions about comparing countries by area, population, GDP and more.">
+    <meta name="twitter:image" content="https://www.comparecountries.vercel.app/images/favicon.png">
+
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./images/favicon.png">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Where does the data come from?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Country figures for area, population, GDP, GDP per capita and life expectancy are aggregated and approximated from public sources such as the World Bank, United Nations and IMF, then simplified for educational comparison. They are refreshed periodically but are not a live feed, so treat them as close estimates rather than an official statistical release." }
+            },
+            {
+                "@type": "Question",
+                "name": "Why do some countries show "—" for GDP or life expectancy?",
+                "acceptedAnswer": { "@type": "Answer", "text": "A handful of very small or data-scarce territories don't have a reliable public figure for every metric. Rather than guess, the tool shows a dash so you're never misled by an invented number." }
+            },
+            {
+                "@type": "Question",
+                "name": "How is population density calculated?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Density is calculated automatically as population ÷ area for every country, so it always stays consistent with the area and population figures shown elsewhere in the tool." }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I share a comparison with someone else?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes — press "Share comparison" on any comparison page. It copies a link containing your exact list of countries, so opening that link rebuilds the same comparison automatically." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this tool free?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes, completely free, with no account required. Clearly marked, reserved advertising spaces are included in the layout for future support of the project, but no tracking-heavy ad scripts are loaded by default." }
+            },
+            {
+                "@type": "Question",
+                "name": "I found an error in the data — can I report it?",
+                "acceptedAnswer": { "@type": "Answer", "text": "This is an independent student project built for learning and portfolio purposes. There's no formal reporting channel yet, but the dataset is being improved over time." }
+            }
+        ]
+    }
+    </script>
+
+</head>
+<body data-param="area">
+
+        <header class="topbar">
+        <div class="container">
+            <a href="index.html" class="brand"><span class="logo-globe">🌍</span> CompareCountries</a>
+            <nav class="site-nav" id="siteNav">
+                <ul>
+                    <li class="has-dropdown">
+                        <button type="button">Compare ▾</button>
+                        <div class="dropdown">
+                        <a href="index.html"><span class="d-icon">🗺️</span><span>Area<br><small>km²</small></span></a>
+                        <a href="population.html"><span class="d-icon">👥</span><span>Population<br><small>people</small></span></a>
+                        <a href="density.html"><span class="d-icon">🧭</span><span>Population Density<br><small>people/km²</small></span></a>
+                        <a href="gdp.html"><span class="d-icon">💰</span><span>GDP<br><small>USD</small></span></a>
+                        <a href="gdp-per-capita.html"><span class="d-icon">🏦</span><span>GDP per Capita<br><small>USD</small></span></a>
+                        <a href="life-expectancy.html"><span class="d-icon">❤️</span><span>Life Expectancy<br><small>years</small></span></a>
+                        </div>
+                    </li>
+                    <li><a href="rankings.html">Rankings</a></li>
+                    <li><a href="facts.html">Fun Facts</a></li>
+                    <li><a href="about.html" class="current">About &amp; FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="toolbar-row">
+                <button class="icon-btn btn-theme" type="button" title="Toggle dark mode" aria-label="Toggle dark mode">🌓</button>
+                <button class="menu-toggle icon-btn" type="button" aria-label="Open menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="main">
+        <div class="container">
+            <header class="header">
+                <span class="eyebrow">ℹ️ About this project</span>
+                <h1>About CompareCountries</h1>
+                <h2>A free, open comparison tool for exploring how the world's countries stack up against each other.</h2>
+            </header>
+
+            <section class="section-block">
+                <h3>What is CompareCountries?</h3>
+                <p>CompareCountries is a lightweight web app that lets anyone — students, teachers, researchers or the simply curious — compare countries side by side across six metrics: area, population, population density, GDP, GDP per capita and life expectancy.</p>
+                <p>Every comparison page shares the same tools: a searchable dashboard with four visual modes (draggable blocks, bubbles, columns and cards), a ranked bar chart, head-to-head statistics, fun real-world context facts, combined totals, and a live world ranking.</p>
+
+                <h3 id="methodology">Data &amp; methodology</h3>
+                <p>Figures are aggregated and simplified from public datasets (World Bank, United Nations, IMF and national statistics offices) for educational comparison. Nominal GDP is expressed in US dollars and is not adjusted for purchasing power parity (PPP). Life expectancy refers to average life expectancy at birth. Population density is calculated automatically from the area and population figures already in the dataset.</p>
+                <p>This project favours clarity and approximate, easy-to-compare figures over frequent live updates — it is best treated as a teaching and exploration tool rather than an authoritative statistical source.</p>
+
+                <div class="metric-cards">
+                    <div class="metric-card"><span class="m-icon">🗺️</span><div><h4>Area</h4><p>Land + water, km²</p></div></div>
+                    <div class="metric-card"><span class="m-icon">👥</span><div><h4>Population</h4><p>Total residents</p></div></div>
+                    <div class="metric-card"><span class="m-icon">🧭</span><div><h4>Density</h4><p>People per km²</p></div></div>
+                    <div class="metric-card"><span class="m-icon">💰</span><div><h4>GDP</h4><p>Nominal, US$</p></div></div>
+                    <div class="metric-card"><span class="m-icon">🏦</span><div><h4>GDP / capita</h4><p>US$ per person</p></div></div>
+                    <div class="metric-card"><span class="m-icon">❤️</span><div><h4>Life expectancy</h4><p>Years at birth</p></div></div>
+                </div>
+
+                <h3 id="faq">Frequently asked questions</h3>
+                <details class="faq-item">
+                    <summary>Where does the data come from?</summary>
+                    <p>Country figures for area, population, GDP, GDP per capita and life expectancy are aggregated and approximated from public sources such as the World Bank, United Nations and IMF, then simplified for educational comparison. They are refreshed periodically but are not a live feed, so treat them as close estimates rather than an official statistical release.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Why do some countries show "—" for GDP or life expectancy?</summary>
+                    <p>A handful of very small or data-scarce territories don't have a reliable public figure for every metric. Rather than guess, the tool shows a dash so you're never misled by an invented number.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How is population density calculated?</summary>
+                    <p>Density is calculated automatically as population ÷ area for every country, so it always stays consistent with the area and population figures shown elsewhere in the tool.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I share a comparison with someone else?</summary>
+                    <p>Yes — press "Share comparison" on any comparison page. It copies a link containing your exact list of countries, so opening that link rebuilds the same comparison automatically.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is this tool free?</summary>
+                    <p>Yes, completely free, with no account required. Clearly marked, reserved advertising spaces are included in the layout for future support of the project, but no tracking-heavy ad scripts are loaded by default.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>I found an error in the data — can I report it?</summary>
+                    <p>This is an independent student project built for learning and portfolio purposes. There's no formal reporting channel yet, but the dataset is being improved over time.</p>
+                </details>
+            </section>
+
+            <div class="ad-slot" data-ad-position="footer">Reserved advertising space (footer)</div>
+
+        </div>
+    </main>
+
+        <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>Compare by</h5>
+                    <ul>
+                    <li><a href="index.html">🗺️ Area</a></li>
+                    <li><a href="population.html">👥 Population</a></li>
+                    <li><a href="density.html">🧭 Population Density</a></li>
+                    <li><a href="gdp.html">💰 GDP</a></li>
+                    <li><a href="gdp-per-capita.html">🏦 GDP per Capita</a></li>
+                    <li><a href="life-expectancy.html">❤️ Life Expectancy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Explore</h5>
+                    <ul>
+                        <li><a href="rankings.html">🏆 World Rankings</a></li>
+                        <li><a href="facts.html">✨ Fun Geography Facts</a></li>
+                        <li><a href="about.html">ℹ️ About &amp; FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>About this project</h5>
+                    <ul>
+                        <li><a href="about.html#methodology">Data &amp; methodology</a></li>
+                        <li><a href="about.html#faq">Frequently asked questions</a></li>
+                        <li><a href="sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CompareCountries &middot; Concept &amp; build by Marcos Ambrósio. Data is aggregated from public sources for educational comparison, not official statistics.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./js/site.js" type="module"></script>
+</body>
+
+</html>
