@@ -50,18 +50,48 @@ function calcBoxSide(value, param, deviceWidth) {
 
 function renderDashboard(state) {
     const dashboard = document.getElementById("dashboard");
-    dashboard.innerHTML = "";
     dashboard.className = `dashboard view-${state.dashboardView}`;
 
     if (state.selected.length === 0) {
         dashboard.innerHTML = emptyState(state.param);
+        dashboard.dataset.view = "";
         return;
     }
+
+    // Só limpamos tudo quando o utilizador muda de modo de visualização
+    // (cubes/bubbles/bars/cards). A adicionar/remover país dentro do MESMO
+    // modo, os blocos já existentes não são recriados — assim mantêm a
+    // posição onde o utilizador os arrastou (ver renderCubes).
+    const viewChanged = dashboard.dataset.view !== state.dashboardView;
+    console.log(`[render] modo="${state.dashboardView}" mudouDeModo=${viewChanged} totalSelecionados=${state.selected.length}`);
+    if (viewChanged) {
+        console.log("[render] modo mudou -> a limpar dashboard e recriar tudo");
+        dashboard.innerHTML = "";
+    }
+    dashboard.dataset.view = state.dashboardView;
 
     if (state.dashboardView === "cubes") return renderCubes(state, dashboard);
     if (state.dashboardView === "bubbles") return renderBubbles(state, dashboard);
     if (state.dashboardView === "bars") return renderColumnBars(state, dashboard);
     return renderCards(state, dashboard);
+}
+
+// Remove do container os elementos cujo país já não está selecionado,
+// e devolve um Map id -> elemento com os que sobraram (para reaproveitar).
+function reconcile(container, selector, selected) {
+    const existing = new Map();
+    container.querySelectorAll(selector).forEach((el) => existing.set(el.id, el));
+    const currentIds = new Set(selected.map((i) => i.id));
+    let removidos = 0;
+    existing.forEach((el, id) => {
+        if (!currentIds.has(id)) {
+            el.remove();
+            existing.delete(id);
+            removidos++;
+        }
+    });
+    console.log(`[reconcile] "${selector}": ${existing.size} bloco(s) reaproveitado(s), ${removidos} removido(s)`);
+    return existing;
 }
 
 function emptyState(param) {
@@ -75,19 +105,32 @@ function emptyState(param) {
 }
 
 function renderCubes(state, dashboard) {
+    const existing = reconcile(dashboard, ".box", state.selected);
+
     state.selected.forEach((item) => {
         const side = calcBoxSide(item.value, state.param, window.innerWidth);
-        const box = document.createElement("div");
-        box.className = "box";
-        box.id = item.id;
+        let box = existing.get(item.id);
+        const isNew = !box;
+
+        if (isNew) {
+            console.log(`[renderCubes] novo bloco para "${item.name}" -> posição inicial`);
+            box = document.createElement("div");
+            box.className = "box";
+            box.id = item.id;
+            box.style.zIndex = String(state.nextZIndex());
+            attachDrag(box, state);
+            dashboard.appendChild(box);
+        } else {
+            console.log(`[renderCubes] bloco de "${item.name}" reaproveitado -> mantém posição arrastada`);
+        }
+
+        // Tamanho/cor/texto atualizam sempre; posição (left/top/position)
+        // só é definida na criação — se já existia, fica onde estava.
         box.style.width = `${side}px`;
         box.style.height = `${side}px`;
         box.style.background = item.color;
         box.title = `${item.name} — ${item.paramsText}`;
-        box.style.zIndex = String(state.nextZIndex());
         box.innerHTML = side > 46 ? `<span class="box-label">${item.name}</span>` : "";
-        attachDrag(box, state);
-        dashboard.appendChild(box);
     });
 }
 
@@ -138,20 +181,28 @@ function attachDrag(box, state) {
 }
 
 function renderBubbles(state, dashboard) {
-    const wrap = document.createElement("div");
-    wrap.className = "bubble-wrap";
+    let wrap = dashboard.querySelector(".bubble-wrap");
+    if (!wrap) {
+        wrap = document.createElement("div");
+        wrap.className = "bubble-wrap";
+        dashboard.appendChild(wrap);
+    }
+    const existing = reconcile(wrap, ".bubble", state.selected);
+
     state.selected.forEach((item) => {
         const side = Math.min(220, Math.max(46, calcBoxSide(item.value, state.param, window.innerWidth) * 0.9));
-        const bubble = document.createElement("div");
-        bubble.className = "bubble";
-        bubble.id = item.id;
+        let bubble = existing.get(item.id);
+        if (!bubble) {
+            bubble = document.createElement("div");
+            bubble.className = "bubble";
+            bubble.id = item.id;
+            wrap.appendChild(bubble);
+        }
         bubble.style.width = `${side}px`;
         bubble.style.height = `${side}px`;
         bubble.style.background = `radial-gradient(circle at 32% 28%, ${lighten(item.color)}, ${item.color})`;
         bubble.innerHTML = `<span>${item.name}</span><small>${item.paramsText}</small>`;
-        wrap.appendChild(bubble);
     });
-    dashboard.appendChild(wrap);
 }
 
 function lighten(rgbStr) {
@@ -164,31 +215,49 @@ function lighten(rgbStr) {
 
 function renderColumnBars(state, dashboard) {
     const max = Math.max(...state.selected.map((i) => i.value || 0), 1);
-    const wrap = document.createElement("div");
-    wrap.className = "column-wrap";
+    let wrap = dashboard.querySelector(".column-wrap");
+    if (!wrap) {
+        wrap = document.createElement("div");
+        wrap.className = "column-wrap";
+        dashboard.appendChild(wrap);
+    }
+    const existing = reconcile(wrap, ".column", state.selected);
+
     state.selected.forEach((item) => {
         const heightPct = Math.max(4, ((item.value || 0) / max) * 100);
-        const col = document.createElement("div");
-        col.className = "column";
-        col.id = item.id;
+        let col = existing.get(item.id);
+        if (!col) {
+            col = document.createElement("div");
+            col.className = "column";
+            col.id = item.id;
+            wrap.appendChild(col);
+        }
         col.innerHTML = `
             <span class="column-value">${item.paramsText}</span>
             <div class="column-bar" style="height:${heightPct}%; background:${item.color};"></div>
             <span class="column-name">${item.name}</span>
         `;
-        wrap.appendChild(col);
     });
-    dashboard.appendChild(wrap);
 }
 
 function renderCards(state, dashboard) {
-    const grid = document.createElement("div");
-    grid.className = "card-grid";
+    let grid = dashboard.querySelector(".card-grid");
+    if (!grid) {
+        grid = document.createElement("div");
+        grid.className = "card-grid";
+        dashboard.appendChild(grid);
+    }
+    const existing = reconcile(grid, ".country-card", state.selected);
+
     state.selected.forEach((item) => {
         const c = item.country;
-        const card = document.createElement("div");
-        card.className = "country-card";
-        card.id = item.id;
+        let card = existing.get(item.id);
+        if (!card) {
+            card = document.createElement("div");
+            card.className = "country-card";
+            card.id = item.id;
+            grid.appendChild(card);
+        }
         card.style.setProperty("--accent", item.color);
         card.innerHTML = `
             <div class="country-card-top">
@@ -200,9 +269,7 @@ function renderCards(state, dashboard) {
             </div>
             <p class="cc-value">${item.paramsText}</p>
         `;
-        grid.appendChild(card);
     });
-    dashboard.appendChild(grid);
 }
 
 // ---------- Graphics tab: horizontal ranked bars ----------

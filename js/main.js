@@ -87,7 +87,7 @@ function cycleColor(id) {
     const old = item.color;
     item.color = returnColor(state.colorPool);
     state.colorPool.push(old);
-    renderAll();
+    // renderAll();
 }
 
 function renderAll() {
