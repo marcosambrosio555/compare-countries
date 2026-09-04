@@ -31,6 +31,46 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.comparecountries.vercel.app/exports.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.comparecountries.vercel.app/imports.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.comparecountries.vercel.app/companies.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.comparecountries.vercel.app/co2-emissions.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.comparecountries.vercel.app/internet-users.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.comparecountries.vercel.app/unemployment.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.comparecountries.vercel.app/forest-area.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.comparecountries.vercel.app/military-spending.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://www.comparecountries.vercel.app/rankings.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
